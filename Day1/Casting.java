@@ -8,5 +8,13 @@ public class Casting {
 
         int intVariable2 = (int)doubleVariable;
         System.out.println(intVariable2);
+
+        byte byteVariable = 102;
+        char charVariable = (char)byteVariable;
+        System.out.println(charVariable);
+
+        String intString = "9";
+        int a = Integer.parseInt(intString);
+        System.out.println(a);
     }
 }
