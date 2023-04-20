@@ -5,5 +5,8 @@ public class Casting {
 	
 		System.out.println(intVariable);      
 		System.out.println(doubleVariable); 
+
+        int intVariable2 = (int)doubleVariable;
+        System.out.println(intVariable2);
     }
 }
