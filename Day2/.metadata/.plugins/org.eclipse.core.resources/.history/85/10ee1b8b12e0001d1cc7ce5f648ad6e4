@@ -16,8 +16,8 @@ public class ConstructorTypes {
 	}
 	
 	public static void main(String[] args) {
-		ConstructorTypes ct1 = new ConstructorTypes(); // 0 args
-		ConstructorTypes ct2 = new ConstructorTypes(1,1); //2 args with int
-		ConstructorTypes ct3 = new ConstructorTypes(1.0f,1.0f); // 2 args with float
+		ConstructorTypes ct1 = new ConstructorTypes();
+		ConstructorTypes ct2 = new ConstructorTypes(1,1);
+		ConstructorTypes ct3 = new ConstructorTypes(1.0f,1.0f);
 	}
 }

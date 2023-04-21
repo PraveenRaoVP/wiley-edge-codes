@@ -3,7 +3,7 @@ package wiley_core_java;
 public class VarScope {
 	
 	int ins = 20;
-	static String name = "Praveen"; // no need of object calling
+	static String name = "Praveen";
 	int val=9;
 	int val1 = 12;
 	
@@ -13,7 +13,7 @@ public class VarScope {
 	}
 	
 	public static void main(String[] args) {
-		int ins = 10; // takes precedence
+		int ins = 10;
 		VarScope vs = new VarScope();
 		int loc = 5;
 		System.out.println(vs.ins);
