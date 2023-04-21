@@ -18,9 +18,11 @@ class Car extends Vehicle{
 
 class SmartCar extends Car{
 	public void sensor() {
-		System.out.println("Sensor");
+		System.out.println("sensor");
 	}
 }
+
+
 
 public class MultiLevelInheritance {
 	public static void main(String[] args) {
