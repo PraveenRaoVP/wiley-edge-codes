@@ -8,7 +8,7 @@ public class VarScope {
 	int val1 = 12;
 	
 	public void sum() { 
-		int val=22;
+		int val=10;
 		System.out.println(this.val+val1);
 	}
 	
