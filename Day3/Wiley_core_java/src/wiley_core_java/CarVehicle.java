@@ -31,5 +31,8 @@ class Car extends Vehicle{
 }
 
 public class CarVehicle {
-	
+	public static void main(String[] args) {
+		Car car = new Car("Blue", 150, 4);
+		System.out.println(car.color+car.speed+car.numWheels);
+	}
 }
