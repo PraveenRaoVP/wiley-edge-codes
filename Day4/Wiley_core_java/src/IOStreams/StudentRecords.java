@@ -59,11 +59,12 @@ public class StudentRecords {
 	}
 	
 	public void writer(Student student) throws IOException {
-		dataOutput.writeBytes(student.getName());
-		dataOutput.writeBytes(student.getGender());
-		dataOutput.writeBytes(Integer.toString(student.getAge()));
-		dataOutput.writeBytes(Character.toString(student.getGrade()));
-		dataOutput.writeBytes("\n");
+		dataOutput.writeUTF(student.getName());
+		dataOutput.writeUTF(student.getGender());
+		dataOutput.writeInt(student.getAge());
+		//dataOutput.writeBytes(Character.toString(student.getGrade()));
+		dataOutput.writeChar(student.getGrade());
+		//dataOutput.writeBytes("\n");
 	}
 	
 	public void save() throws IOException {
@@ -74,7 +75,7 @@ public class StudentRecords {
 		List<Student> studentList = new ArrayList<>();
 		studentList.add(new Student("Praveen","Male",21,'S'));
 		studentList.add(new Student("Anon","Male",23,'A'));
-		String outputFile = "D:\\Games\\Work\\WileyEdge\\Codes\\Day4\\Wiley_core_java\\data\\studentdata.txt";
+		String outputFile = "D:\\Games\\Work\\WileyEdge\\Codes\\Day4\\Wiley_core_java\\data\\students.dat";
 		try {
 			StudentRecords outputWriter = new StudentRecords(outputFile);
 			for(Student st: studentList) {
