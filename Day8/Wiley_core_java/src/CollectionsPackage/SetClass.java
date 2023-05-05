@@ -1,6 +1,7 @@
 package CollectionsPackage;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.List;
@@ -31,12 +32,16 @@ public class SetClass {
 //		lhs.add("Summa");
 //		//lhs.remove("world");
 //		System.out.println(lhs);
-		TreeSet<String> ts1 = new TreeSet<>();
-		
-		ts1.add("a");
-		ts1.add("b");
-		ts1.add("c");
-		
-		System.out.println(ts1.first().compareTo(ts1.last()));
+//		TreeSet<String> ts1 = new TreeSet<>();
+//		
+//		ts1.add("a");
+//		ts1.add("b");
+//		ts1.add("c");
+//		
+//		System.out.println(ts1.first().compareTo(ts1.last()));
+		List<String> list = new ArrayList<>(Arrays.asList("A", "B", "C", "D", "D"));
+	      System.out.println("List: " + list);
+	      Set<String> set = new HashSet<>(list);
+	      System.out.println("Set: " + set);
 	}
 }
