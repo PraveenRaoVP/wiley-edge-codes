@@ -3,7 +3,7 @@ package hashing;
 import java.util.*;
 
 class GraphClass {
-    static void addEdge(ArrayList<ArrayList<Integer> > adj,
+    static void insert(ArrayList<ArrayList<Integer> > adj,
                         int u, int v)
     {
         adj.get(u).add(v);
@@ -33,13 +33,13 @@ class GraphClass {
  
         for (int i = 0; i < vertex; i++)
             graph.add(new ArrayList<Integer>());
-        addEdge(graph, 0, 1);
-        addEdge(graph, 0, 4);
-        addEdge(graph, 1, 2);
-        addEdge(graph, 1, 3);
-        addEdge(graph, 1, 4);
-        addEdge(graph, 2, 3);
-        addEdge(graph, 3, 4);
+        insert(graph, 0, 1);
+        insert(graph, 0, 4);
+        insert(graph, 1, 2);
+        insert(graph, 1, 3);
+        insert(graph, 1, 4);
+        insert(graph, 2, 3);
+        insert(graph, 3, 4);
  
         printGraph(graph);
     }
