@@ -8,10 +8,10 @@
             "server": "localhost",
             "port": 3306,
             "driver": "MySQL",
-            "username": "root",
-            "password": "mysql@123",
-            "database": "wiley",
-            "name": "Wiley connection"
+            "name": "FirstConnection",
+            "database": "mysql",
+            "username": "Praveen",
+            "password": "mysql@123"
         }
     ]
 }
