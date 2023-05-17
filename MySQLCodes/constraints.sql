@@ -9,7 +9,7 @@ CREATE TABLE tasks(
 );
 ALTER TABLE tasks AUTO_INCREMENT=1000;
 
-SET foreign_key_checks = 0;
+SET foreign_key_checks = 1;
 ALTER TABLE tasks DISABLE KEYS;
 
 INSERT INTO tasks (task_name,lastName) VALUES ("Cooking", "Peterson");
