@@ -8,7 +8,7 @@ SELECT COUNT(*) AS Total from products;
 SELECT productLine, COUNT(*) AS Total from products GROUP BY productLine;
 SELECT * FROM products;
 SELECT a.productCode, SUM(b.quantityOrdered*b.priceEach) AS Total FROM products a, orderDetails b WHERE a.`productCode`= b.`productCode` 
-GROUP BY `productCode`;
+GROUP BY `productCode` ORDER BY Total desc LIMIT 5;
 
 SELECT b.productCode, a.`productName`, SUM(b.quantityOrdered*b.priceEach) AS Total FROM products a, orderDetails b WHERE a.`productCode`= b.`productCode` 
 GROUP BY `productCode`;
