@@ -17,7 +17,12 @@ CALL GetProducts();
 -- CALL GetCustomerDetails();
 
 -- SELECT * FROM customers;
-DELIMITER $$ USE wileyclassic $$ CREATE PROCEDURE GetAllCustomers() BEGIN SELECT * from customers; END $$ DELIMITER;
+DELIMITER $$ 
+USE wileyclassic $$ 
+CREATE PROCEDURE GetAllCustomers() 
+BEGIN 
+    SELECT * from customers; 
+END $$ DELIMITER;
 
 SHOW PROCEDURE status;
 
