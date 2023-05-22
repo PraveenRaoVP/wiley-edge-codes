@@ -36,6 +36,6 @@ EXPLAIN FORMAT = JSON SELECT productName, buyPrice FROM products WHERE buyPrice 
 
 CREATE INDEX idx_buyprice ON products(buyPrice);
 
-CREATE INDEX extension ON employees 
+CREATE INDEX extension ON employees;
 
 
