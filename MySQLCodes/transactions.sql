@@ -48,4 +48,12 @@ VALUES(@orderNumber,'S18_1749', 30, '136', 1),
 -- 5. commit changes    
 COMMIT;
 
+use wileyjdbc;
+
+CREATE TABLE employee (
+id INT NOT NULL,
+name VARCHAR(45) NULL,
+salary INT NULL,
+age INT NULL,
+PRIMARY KEY (id));
 
