@@ -1,4 +1,4 @@
-package com.wiley.jdbcapp;
+package com.wiley.newjdbcpractice;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -10,7 +10,7 @@ import java.sql.Date;
 
 public class App {
 	public static void addCandidate(String firstName, String lastName, Date dob, String email, String phone,
-			int[] skills) throws SQLException {
+			int[] skills) throws SQLException, ClassNotFoundException {
 
 		Connection conn = null;
 		PreparedStatement ps = null;
@@ -28,9 +28,9 @@ public class App {
 
 			// Here is your transaction
 			// insert the candidate
-			String sqlInsert = "INSERT INTO candidates(first_name, last_name, dob, phone, email) VALUES(?,?,?,?,?)";
+			String insertSQL = "INSERT INTO candidates(first_name, last_name, dob, phone, email) VALUES(?,?,?,?,?)";
 
-			ps = conn.prepareStatement(sqlInsert, Statement.RETURN_GENERATED_KEYS);
+			ps = conn.prepareStatement(insertSQL, Statement.RETURN_GENERATED_KEYS);
 			
 			ps.setString(1, firstName);
 			ps.setString(2, lastName);
@@ -88,7 +88,7 @@ public class App {
 		}
 	}
 
-	public static void main(String[] args) throws SQLException {
+	public static void main(String[] args) throws SQLException, ClassNotFoundException {
 		int[] skills = {1,2,3};
 		
 		addCandidate("Venkat", "B", Date.valueOf("1990-02-04"), "bvsrao91@gmail.com", "9035351966", skills);
