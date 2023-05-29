@@ -5,7 +5,9 @@ import java.sql.DriverManager;
 import java.util.ResourceBundle;
 
 public class DBConnection {
-	private DBConnection() {}
+	private DBConnection() {
+		
+	}
 	
 	public static Connection getDBConnection() {
 		Connection dbcon = null;
@@ -25,5 +27,4 @@ public class DBConnection {
 		System.out.println("db connected successfully");
 		return dbcon;
 	}
-
 }

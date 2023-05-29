@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+						http://www.springframework.org/schema/context http://www.springframework.org/schema/spring-context.xsd">
+	<!--
+	<bean class="com.wiley.springcore.Student" name="wileystudent1">
+		<property name="studentId">
+			<value>1006</value>
+		</property>
+		<property name="studentName" value="Yoyo">
+		</property>
+		<property name="studentAddress" value="Mumbai">
+		</property>
+
+	</bean>
+	<bean
+		class="com.wiley.springcore.Student"
+		name="wileystudent2"
+		p:studentId="1921"
+		p:studentName="Praveen"
+		p:studentAddress="Chennai"
+	>
+	</bean>
+	
+	-->
+	<bean class="com.wiley.springcore.Student" name="wileystudent1"
+		p:studentId="1" p:studentName="Priya" p:studentAddress="delhi">
+		<property name="phones">
+			<list>
+				<value>6201208343</value>
+				<value>7024812953</value>
+			</list>
+		</property>
+
+		<property name="addresses">
+			<set>
+				<value>delhi</value>
+				<value>bihar</value>
+			</set>
+
+		</property>
+
+		<property name="courses">
+			<map>
+				<entry key="java" value="2month"></entry>
+				<entry key="python" value="1 month"></entry>
+			</map>
+		</property>
+	</bean>
+	<bean class="com.wiley.springcore.StudentAddress" name="addref">
+		<property name="address" value="Chennai"></property>
+	</bean>
+	<bean class="com.wiley.springcore.Student" name="wileystudent2"
+		p:studentId="1" p:studentName="Praveen" >
+		<property name="phones">
+			<list>
+				<value>6201208343</value>
+				<value>7024812953</value>
+			</list>
+		</property>
+
+		<property name="studentAddress">
+			<ref bean="addref"/>
+		</property>
+
+		<property name="courses">
+			<map>
+				<entry key="java" value="2month"></entry>
+				<entry key="python" value="1 month"></entry>
+			</map>
+		</property>
+	</bean>
+	
+	
+</beans>
