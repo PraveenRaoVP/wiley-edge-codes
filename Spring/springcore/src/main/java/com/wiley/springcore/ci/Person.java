@@ -30,5 +30,4 @@ public class Person {
 		this.name = name;
 		this.cert = cert;
 	}
-	
 }

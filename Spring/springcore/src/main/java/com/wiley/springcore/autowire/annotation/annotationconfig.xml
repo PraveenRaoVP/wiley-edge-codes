@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="https://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+                    http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+                    http://www.springframework.org/schema/context 
+                    http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+	<context:annotation-config />
+
+	<bean class="com.wiley.springcore.autowire.annotation.Address" name="address" id="address">
+		<property name="street" value="PK"></property>
+		<property name="city" value="Chennai"></property>
+	</bean>
+	<bean class="com.wiley.springcore.autowire.annotation.Address" name="address2" id="address2">
+		<property name="street" value="KP"></property>
+		<property name="city" value="Bangalore"></property>
+	</bean>
+	<bean class="com.wiley.springcore.autowire.annotation.Phones" name="phones1">
+		<property name="phoneNumbers">
+			<list>
+				<value>8610571051</value>
+				<value>2934642231</value>
+			</list>
+		</property>
+	</bean>
+	<bean class="com.wiley.springcore.autowire.annotation.Courses" name="courses1">
+		<property name="courseDetails">
+			<map>
+				<entry key="java" value="1 month" />
+				<entry key="python" value="2 month" />
+			</map>
+		</property>
+	</bean>
+	<bean class="com.wiley.springcore.autowire.annotation.Emp" name="emp1" autowire="constructor" />
+</beans>
