@@ -7,6 +7,9 @@ public class MiscMain {
 	public static void main(String[] args) {
 		ApplicationContext context = new ClassPathXmlApplicationContext("com/wiley/springcore/misc/config.xml");
 		Employee emp = context.getBean("employee", Employee.class);
-		System.out.println(emp);		
+		System.out.println(emp);	
+		
+		SingletonA si = context.getBean("praveen", SingletonA.class);
+		si.sayHello();
 	}
 }
