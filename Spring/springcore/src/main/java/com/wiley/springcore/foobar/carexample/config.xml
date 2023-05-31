@@ -13,9 +13,9 @@
 		http://www.springframework.org/schema/util/spring-util.xsd">
 	 <!-- Define the Car bean using a factory method -->
     <bean id="myCar" class="com.wiley.springcore.foobar.carexample.Car" factory-method="createInstance">
-        <constructor-arg value="Toyota" />
-        <constructor-arg value="Camry" />
-        <constructor-arg value="2022" />
+        <constructor-arg value="Maruti" />
+        <constructor-arg value="Ignis" />
+        <constructor-arg value="2017" />
     </bean>
 
     <!-- Define the CarService bean -->

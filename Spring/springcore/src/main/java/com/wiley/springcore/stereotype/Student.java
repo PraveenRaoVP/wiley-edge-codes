@@ -1,21 +1,21 @@
-package com.wiley.springcore.config;
+package com.wiley.springcore.stereotype;
 
 import org.springframework.stereotype.Component;
 
 //@Component("student1")
 public class Student {
 	
-	private Beer beer;
-	
-	
-	public Beer getBeer() {
-		return beer;
-	}
+//	private Beer beer;
+//
+//
+//	public Beer getBeer() {
+//		return beer;
+//	}
 
 
-	public void setBeer(Beer beer) {
-		this.beer = beer;
-	}
+	//public void setBeer(Beer beer) {
+//		this.beer = beer;
+//	}
 
 
 	public void study() {
