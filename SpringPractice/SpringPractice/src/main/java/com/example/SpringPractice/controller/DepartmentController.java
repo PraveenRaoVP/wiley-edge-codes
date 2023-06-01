@@ -27,4 +27,21 @@ public class DepartmentController {
     public Department getDepartmentById(@PathVariable("id") Long departmentId) throws DepartmentNotFoundException {
         return depService.getDepartmentById(departmentId);
     }
+    //delete a department by id
+    @DeleteMapping("/departments/{id}")
+    public String deleteDepartment(@PathVariable("id") Long departmentId) throws DepartmentNotFoundException {
+        depService.deleteDepartmentById(departmentId);
+        return "Department "+departmentId+" "+"deleted successfully";
+    }
+
+    //get department by name
+    @GetMapping("/departments/name/{name}")
+    public List<Department> getDepartmentByName(@PathVariable("name") String departmentName) throws DepartmentNotFoundException{
+        return depService.getDepartmentByName(departmentName);
+    }
+    //update department by id
+    @PutMapping("/departments/{id}")
+    public Department updateDepartment(@PathVariable("id") Long departmentId, @RequestBody Department department) throws DepartmentNotFoundException {
+        return depService.updateDepartment(departmentId, department);
+    }
 }

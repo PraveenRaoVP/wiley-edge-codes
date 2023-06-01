@@ -11,4 +11,7 @@ public interface BookService {
     public Book getBookById(Long bookId) throws BookNotFoundException;
     public Book getBookByName(String bookName) throws BookNotFoundException;
 
+    public void deleteBookById(Long bookId);
+    public Book updateBook(Long bookId, Book book) throws BookNotFoundException;
+
 }

@@ -1,12 +1,10 @@
 package com.example.SpringPractice.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -19,4 +17,7 @@ public class Author {
     private String authorName;
     private String authorAddress;
     private String authorCode;
+    @OneToMany(targetEntity = Book.class, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "authorId", referencedColumnName = "authorId")
+    private List<Book> books;
 }

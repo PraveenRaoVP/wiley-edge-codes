@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Objects;
 
 @Service
 public class DepartmentServiceImpl implements DepartmentService {
@@ -36,17 +37,31 @@ public class DepartmentServiceImpl implements DepartmentService {
     }
 
     @Override
-    public Department getDepartmentByName(String departmentName) {
-        return null;
+    public List<Department> getDepartmentByName(String departmentName) throws DepartmentNotFoundException {
+        if(depRepo.getDepartmentByName(departmentName)==null){
+            throw new DepartmentNotFoundException("Department not found: " + departmentName + "");
+        }
+        return depRepo.getDepartmentByName(departmentName);
     }
 
     @Override
     public void deleteDepartmentById(Long departmentId) {
-
+        depRepo.deleteById(departmentId);
     }
 
     @Override
-    public Department updateDepartment(Department departmentId, Department department) {
-        return null;
+    public Department updateDepartment(Long departmentId, Department department) throws DepartmentNotFoundException {
+        Department dep = depRepo.findById(departmentId).get();
+
+        if(!"".equalsIgnoreCase(dep.getDepartmentName())){
+            dep.setDepartmentName(department.getDepartmentName());
+        }
+        if(!"".equalsIgnoreCase(dep.getDepartmentAddress())){
+            dep.setDepartmentAddress(department.getDepartmentAddress());
+        }
+        if(!"".equalsIgnoreCase(dep.getDepartmentCode())) {
+            dep.setDepartmentCode(department.getDepartmentCode());
+        }
+        return depRepo.save(dep);
     }
 }
