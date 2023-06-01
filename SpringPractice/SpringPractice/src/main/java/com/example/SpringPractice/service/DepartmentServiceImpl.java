@@ -1,5 +1,6 @@
 package com.example.SpringPractice.service;
 
+import com.example.SpringPractice.exception.DepartmentNotFoundException;
 import com.example.SpringPractice.model.Department;
 import com.example.SpringPractice.repository.DepartmentRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,10 +28,12 @@ public class DepartmentServiceImpl implements DepartmentService {
     }
 
     @Override
-    public Department getDepartmentById(Long departmentId) {
-        return null;
+    public Department getDepartmentById(Long departmentId) throws DepartmentNotFoundException {
+        if(!depRepo.findById(departmentId).isPresent()){
+            throw new DepartmentNotFoundException("Department not found: " + departmentId + "");
+        }
+        return depRepo.findById(departmentId).get();
     }
-
 
     @Override
     public Department getDepartmentByName(String departmentName) {
