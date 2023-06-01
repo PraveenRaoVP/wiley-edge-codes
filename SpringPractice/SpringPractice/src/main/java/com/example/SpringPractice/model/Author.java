@@ -17,7 +17,6 @@ public class Author {
     private String authorName;
     private String authorAddress;
     private String authorCode;
-    @OneToMany(targetEntity = Book.class, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "authorId", referencedColumnName = "authorId")
+    @OneToMany(targetEntity = Book.class, cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "author")
     private List<Book> books;
 }

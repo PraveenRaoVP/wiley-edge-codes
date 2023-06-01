@@ -32,4 +32,13 @@ public class BookController {
     public Book getBookByName(@PathVariable("name") String bookName) throws BookNotFoundException {
         return bookService.getBookByName(bookName);
     }
+    @PutMapping("/books/{id}")
+    public Book updateBook(@PathVariable("id") Long bookId, @RequestBody Book book) throws BookNotFoundException {
+        return bookService.updateBook(bookId, book);
+    }
+    @DeleteMapping("/books/{id}")
+    public String deleteBook(@PathVariable("id") Long bookId) throws BookNotFoundException {
+        bookService.deleteBookById(bookId);
+        return "Book " + bookId + " " + "deleted successfully";
+    }
 }

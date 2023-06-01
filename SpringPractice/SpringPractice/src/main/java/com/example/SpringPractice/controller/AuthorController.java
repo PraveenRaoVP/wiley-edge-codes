@@ -25,4 +25,17 @@ public class AuthorController {
     public Author getAuthorById(@PathVariable("id") Long authorId) throws AuthorNotFoundException {
         return authorService.getAuthorById(authorId);
     }
+    @GetMapping("/author/name/{name}")
+    public Author getAuthorByName(@PathVariable("name") String authorName) throws AuthorNotFoundException {
+        return authorService.getAuthorByName(authorName);
+    }
+    @PutMapping("/author/{id}")
+    public Author updateAuthor(@PathVariable("id") Long authorId, @RequestBody Author author) throws AuthorNotFoundException {
+        return authorService.updateAuthor(authorId, author);
+    }
+    @DeleteMapping("/author/{id}")
+    public String deleteAuthor(@PathVariable("id") Long authorId) throws AuthorNotFoundException {
+        authorService.deleteAuthorById(authorId);
+        return "Author "+authorId+" "+"deleted successfully";
+    }
 }

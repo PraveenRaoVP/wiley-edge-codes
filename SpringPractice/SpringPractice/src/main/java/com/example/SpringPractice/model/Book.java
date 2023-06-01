@@ -1,12 +1,10 @@
 package com.example.SpringPractice.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
 
 @Data
 @NoArgsConstructor
@@ -18,4 +16,7 @@ public class Book {
     private Long bookId;
     private Long authorId;
     private String bookName;
+    @ManyToOne( fetch = FetchType.LAZY)
+    @JoinColumn(name= "authorId", insertable = false, updatable = false, referencedColumnName = "authorId")
+    private Author author;
 }

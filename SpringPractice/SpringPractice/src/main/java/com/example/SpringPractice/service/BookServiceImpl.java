@@ -35,4 +35,22 @@ public class BookServiceImpl implements BookService{
         }
         return bookRepo.findBookByName(bookName);
     }
+
+    @Override
+    public void deleteBookById(Long bookId) {
+        bookRepo.deleteById(bookId);
+    }
+
+    @Override
+    public Book updateBook(Long bookId, Book book) throws BookNotFoundException {
+        Book b = bookRepo.findById(bookId).get();
+
+        if(!"".equalsIgnoreCase(b.getBookName())){
+            b.setBookName(book.getBookName());
+        }
+        if(b.getAuthorId()!=null){
+            b.setAuthorId(book.getAuthorId());
+        }
+        return bookRepo.save(b);
+    }
 }
