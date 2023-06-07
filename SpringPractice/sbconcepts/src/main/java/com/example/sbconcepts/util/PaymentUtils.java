@@ -7,19 +7,23 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class PaymentUtils {
-    private static Map<String, Double> paymentMap = new HashMap<>();
-
+    private static Map<String,Double> paymentMap = new HashMap<>();
     static{
-        paymentMap.put("ac1", 123000.00);
-        paymentMap.put("ac2", 12300.00);
-        paymentMap.put("ac3", 23000.00);
-        paymentMap.put("ac4", 1200.00);
+        paymentMap.put("ac_1",9000.0);
+        paymentMap.put("ac_2",12000.0);
+        paymentMap.put("ac_3",6000.0);
+        paymentMap.put("ac_4",4000.0);
     }
-
     public static boolean validateCreditLimit(String accountNumber, double paidAmount) {
-        if(paidAmount > paymentMap.get(accountNumber)){
+        if (!paymentMap.containsKey(accountNumber)) {
+            throw new IllegalArgumentException("Invalid account number");
+        }
+
+        Double creditLimit = paymentMap.get(accountNumber);
+        if (paidAmount > creditLimit) {
             throw new InsufficientAmountException("Insufficient Amount in your account");
-        } else
-        return true;
+        } else {
+            return true;
+        }
     }
 }

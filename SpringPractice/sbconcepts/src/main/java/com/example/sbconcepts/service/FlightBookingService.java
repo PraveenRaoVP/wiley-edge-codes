@@ -1,5 +1,6 @@
 package com.example.sbconcepts.service;
 
+import com.example.sbconcepts.exception.InsufficientAmountException;
 import com.example.sbconcepts.model.PassengerInfo;
 import com.example.sbconcepts.model.PaymentInfo;
 import com.example.sbconcepts.repository.PassengerInfoRepository;
@@ -24,7 +25,12 @@ public class FlightBookingService {
     @Transactional
     public FlightBookingAck bookFlightTicket(FlightBookingRequest request) {
         PassengerInfo passengerInfo = request.getPassengerInfo();
+        passengerInfoRepository.save(passengerInfo);
         PaymentInfo paymentInfo = request.getPaymentInfo();
+//        if (!PaymentUtils.validateCreditLimit(paymentInfo.getAccountNumber(), passengerInfo.getFare())) {
+//            // Handle the case where the credit limit is not valid
+//            throw new InsufficientAmountException("Insufficient Amount in your account");
+//        }
         PaymentUtils.validateCreditLimit(paymentInfo.getAccountNumber(), passengerInfo.getFare());
         paymentInfo.setPassengerId(passengerInfo.getPid());
         paymentInfo.setAmount(passengerInfo.getFare());

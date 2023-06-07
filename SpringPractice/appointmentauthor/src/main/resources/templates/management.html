@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Management</title>
+</head>
+<body>
+<h1>Management</h1>
+<form action="#" th:action="@{/approveBook/{bookId}(bookId=${book.id})}" method="post">
+  <input type="submit" value="Approve Book" th:if="${!book.approved}">
+</form>
+</body>
+</html>
