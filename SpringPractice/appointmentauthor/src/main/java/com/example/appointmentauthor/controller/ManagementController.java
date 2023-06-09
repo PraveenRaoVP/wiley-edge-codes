@@ -1,5 +1,6 @@
 package com.example.appointmentauthor.controller;
 
+import com.example.appointmentauthor.exception.BookNotFoundException;
 import com.example.appointmentauthor.model.Author;
 import com.example.appointmentauthor.model.Book;
 import com.example.appointmentauthor.model.Management;
@@ -38,7 +39,7 @@ public class ManagementController {
     }
 
     @PostMapping("/management/approve/{id}")
-    public String approveBook(@PathVariable Long id) {
+    public String approveBook(@PathVariable Long id) throws BookNotFoundException {
         managementService.approveBook(id);
         return "redirect:/management/approve";
     }

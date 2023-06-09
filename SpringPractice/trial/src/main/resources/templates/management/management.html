@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Management</title>
+</head>
+<body>
+<h1>Management</h1>
+<table>
+  <tr>
+    <th>Book ID</th>
+    <th>Approval</th>
+  </tr>
+  <tr>
+    <td th:text="${management.book.id}"></td>
+    <td>
+      <span th:if="${management.approval}">Approved</span>
+      <span th:unless="${management.approval}">Pending</span>
+    </td>
+  </tr>
+</table>
+
+<h2>Approve or Reject Book</h2>
+<form th:action="@{/management/approve/{bookId}(bookId=${management.book.id})}" method="post">
+  <button type="submit">Approve</button>
+</form>
+<form th:action="@{/management/reject/{bookId}(bookId=${management.book.id})}" method="post">
+  <button type="submit">Reject</button>
+</form>
+</body>
+</html>

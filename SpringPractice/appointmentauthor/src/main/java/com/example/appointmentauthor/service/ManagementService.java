@@ -31,7 +31,7 @@ public class ManagementService {
         return bookRepository.findByIsApprovedFalse();
     }
 
-    public void approveBook(Long id) {
+    public void approveBook(Long id) throws BookNotFoundException {
         Book book = bookRepository.findById(id)
                 .orElseThrow(() -> new BookNotFoundException("Book not found with id: " + id));
 

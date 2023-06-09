@@ -1,0 +1,167 @@
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Apply basic styles */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+  }
+  
+  header {
+    background-color: #333;
+    padding: 10px;
+  }
+  
+  .logo img{
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    margin-bottom: 5px;
+  }
+  
+  nav ul {
+    font-size: 20px;
+    font-weight: 600;
+    list-style-type: none;
+    text-align: right;
+  }
+  
+  nav ul li {
+    display: inline-block;
+    margin: 0 10px;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: #fff;
+  }
+  
+  .main {
+    padding: 20px;
+    margin: 20px;
+    border: 1px solid rgba(0,255,255);
+    border-radius: 12px;
+    background-color: rgba(0,255,255,0.2);
+  }
+  
+  .heading img{
+      width: 100%;
+      height: 400px;
+      border-radius: 12px;
+  }
+
+  .heading-text{
+      margin-top: 40px;
+      margin-bottom: 10px;
+    text-align: center;
+    font-size: 40px;
+  }
+  
+  .menu{
+    display: flex;
+  }
+
+  .menu-cards{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    border: 1px solid rgba(0,255,255);
+    border-radius: 12px; 
+  }
+
+  .menu-description{
+    padding: 30px;
+    font-weight: 500;
+  }
+
+  .non-veg{
+    margin-right: 60px;
+  }
+  .menu-cards img{
+    margin: 10px;
+    height: 300px;
+    width: 300px;
+  }
+
+  .menu-heading{
+    text-align: center;
+  }
+
+  section {
+    
+    margin-bottom: 40px;
+    
+    padding: 20px;
+  }
+
+  
+  
+  section h2 {
+    color: #FFF;
+    margin-bottom: 10px;
+  }
+  
+  footer {
+    background-color: #333;
+    padding: 10px;
+    text-align: center;
+    color: #fff;
+    font-size: 12px;
+  }
+
+  .founder{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .about-people img{
+    height: 400px;
+    width: 400px;
+    padding: 50px;
+    margin: 30px;
+  }
+
+  .about-people p{
+    text-align: center;
+  }
+  
+  
+  /* Apply responsive styles using media queries */
+  @media (min-width: 768px) {
+    header {
+      padding: 20px;
+    }
+  
+    nav ul li {
+      margin: 0 20px;
+    }
+  
+    main {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    .menu{
+      display: flex;
+      flex-direction: column;
+    }
+    section{
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    main {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+  }
+   

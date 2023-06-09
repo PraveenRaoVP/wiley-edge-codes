@@ -19,6 +19,9 @@ public class Book {
     @JoinColumn(name = "author_id")
     private Author author;
 
+    @OneToOne
+    @JoinColumn(name = "management_id")
+    private Management management;
     private boolean isApproved;
 
     // Other properties and methods

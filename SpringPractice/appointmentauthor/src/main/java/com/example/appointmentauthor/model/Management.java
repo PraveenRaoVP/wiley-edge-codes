@@ -1,10 +1,5 @@
 package com.example.appointmentauthor.model;
 
-
-
-
-
-
 import jakarta.persistence.*;
 import lombok.*;
 

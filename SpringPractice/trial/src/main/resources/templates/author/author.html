@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>Author Details</title>
+</head>
+<body>
+<h1>Author Details</h1>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Books</th>
+    </tr>
+    <tr>
+        <td th:text="${author.id}"></td>
+        <td th:text="${author.name}"></td>
+        <td>
+            <ul>
+                <li th:each="book : ${author.books}" th:text="${book.title}"></li>
+            </ul>
+        </td>
+    </tr>
+</table>
+
+<h2>Add Book</h2>
+<form th:action="@{/authors/{authorId}/books/add(authorId=${author.id})}" method="post">
+    <label for="book">Book:</label>
+    <select id="book" name="book.id" required>
+        <option th:each="book : ${books}" th:value="${book.id}" th:text="${book.title}"></option>
+    </select>
+    <button type="submit">Add</button>
+</form>
+
+<h2>Remove Book</h2>
+<form th:action="@{/authors/{authorId}/books/remove(authorId=${author.id})}" method="post">
+    <label for="book">Book:</label>
+    <select id="book" name="book.id" required>
+        <option th:each="book : ${author.books}" th:value="${book.id}" th:text="${book.title}"></option>
+    </select>
+    <button type="submit">Remove</button>
+</form>
+</body>
+</html>

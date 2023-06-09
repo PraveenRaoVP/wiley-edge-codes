@@ -1,5 +1,7 @@
 package com.example.appointmentauthor.controller;
 
+import com.example.appointmentauthor.exception.AuthorNotFoundException;
+import com.example.appointmentauthor.exception.StudentNotFoundException;
 import com.example.appointmentauthor.model.Author;
 import com.example.appointmentauthor.model.Management;
 import com.example.appointmentauthor.model.Student;
@@ -75,13 +77,13 @@ public class StudentController {
     }
 
     @PostMapping("/students/{studentId}/appointments/{authorId}")
-    public String addStudentAppointment(@PathVariable Long studentId, @PathVariable Long authorId) {
+    public String addStudentAppointment(@PathVariable Long studentId, @PathVariable Long authorId) throws AuthorNotFoundException, StudentNotFoundException {
         studentService.addAppointment(studentId, authorId);
         return "redirect:/students/" + studentId + "/appointments";
     }
 
     @GetMapping("/students/{studentId}/appointments/{authorId}/cancel")
-    public String cancelStudentAppointment(@PathVariable Long studentId, @PathVariable Long authorId) {
+    public String cancelStudentAppointment(@PathVariable Long studentId, @PathVariable Long authorId) throws AuthorNotFoundException, StudentNotFoundException {
         studentService.cancelAppointment(studentId, authorId);
         return "redirect:/students/" + studentId + "/appointments";
     }
