@@ -1,6 +1,6 @@
-import { Books } from "./students";
+import { Book } from "./students";
 
-export const Book: Books[] = [{
+export const Books: Book[] = [{
     id: 1,
     title: "ABCDEF",
     author: "Praveen"

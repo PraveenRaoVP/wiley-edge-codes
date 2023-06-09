@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
-import { Books } from "./students";
-import { Book } from "./mock-students";
+import { Book } from "./students";
+import { Books } from "./mock-students";
 
 @Component({
     selector: "app-welcome",
@@ -12,5 +12,11 @@ import { Book } from "./mock-students";
 export class WelcomeModule{
     message="Hello, Welcome to wiley";
 
-    books = Book
+    books = Books
+
+    selectedBook?: Book;
+
+    onSelect(book: Book): void {
+        this.selectedBook=book;
+    }
 }
