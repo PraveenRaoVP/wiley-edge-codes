@@ -11,11 +11,14 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { RouterModule, Routes } from '@angular/router';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ParentComponent } from './parent/parent.component';
+import { ChildComponent } from './child/child.component';
 
 const appRoutes: Routes = [
   {path: '', component: WelcomeModule},
   {path: 'welcome', component: WelcomeModule},
   {path: 'products', component: ProductsComponent},
+  {path: '', redirectTo:'/welcome', pathMatch:"full"},
   {path: "**", component: PageNotFoundComponent}
 ]
 
@@ -27,7 +30,9 @@ const appRoutes: Routes = [
     ProductDetailsComponent,
     HeaderComponent,
     FooterComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ParentComponent,
+    ChildComponent
   ],
   imports: [
     BrowserModule,

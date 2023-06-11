@@ -3,3 +3,5 @@
 /bin/
 .gitignore
 /.settings/
+/node_modules
+
