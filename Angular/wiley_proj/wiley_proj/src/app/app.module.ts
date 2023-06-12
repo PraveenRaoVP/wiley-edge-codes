@@ -45,8 +45,8 @@ import { ButtonComponent } from './components/button/button.component';
     BrowserModule,
     FormsModule,
     HttpClientModule,
-     AppRoutingModule,
-     FontAwesomeModule,
+    AppRoutingModule,
+    FontAwesomeModule,
     // RouterModule.forRoot(appRoutes)
   ],
   providers: [],

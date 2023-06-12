@@ -1,1 +1,15 @@
-<p>add-task works!</p>
+<form class="form-control add-form" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="text">Task Name</label>
+      <input type="text" class="form-control" id="text" aria-describedby="emailHelp" [(ngModel)]="text" placeholder="Enter email" name="text">
+    </div>
+    <div class="form-group form-control-check">
+        <label for="day"></label>
+        <input type="text" class="form-control" id="day" aria-describedby="emailHelp" [(ngModel)]="day" placeholder="Enter day" name="day">
+     </div>
+     <div class="form-group">
+        <label for="reminder">Reminder</label>
+        <input type="checkbox" class="form-control" id="reminder" aria-describedby="emailHelp" [(ngModel)]="reminder" name="reminder">
+     </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
