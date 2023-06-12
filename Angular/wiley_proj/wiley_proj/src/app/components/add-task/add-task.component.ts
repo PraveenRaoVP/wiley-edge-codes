@@ -14,6 +14,8 @@ export class AddTaskComponent implements OnInit {
   text: string = '';
   day: string = '';
   reminder: boolean = false;
+  textError: string = ''
+  red="red"
 
   showAddTask ?: boolean;
 
@@ -33,6 +35,12 @@ export class AddTaskComponent implements OnInit {
   }
 
   onSubmit(){
+    
+    if(!this.text){
+      this.textError = "Enter a task";
+      return;
+    }
+    
     const newTask = {
       text: this.text,
       day: this.day,
@@ -43,5 +51,6 @@ export class AddTaskComponent implements OnInit {
     this.day='';
     this.reminder = false;
     this.router.navigate(['/'])
+    this.textError=''
   }
 }
