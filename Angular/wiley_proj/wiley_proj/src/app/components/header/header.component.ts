@@ -25,6 +25,7 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.showAddTask=false;
   }
 
   toggleTask(){

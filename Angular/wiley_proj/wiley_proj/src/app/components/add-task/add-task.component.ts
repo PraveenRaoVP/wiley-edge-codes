@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { UiService } from 'src/app/service/ui.service';
+import { Task } from 'src/app/Task';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-task',
@@ -17,7 +19,9 @@ export class AddTaskComponent implements OnInit {
 
   subScription?: Subscription;
 
-  constructor(private uiService: UiService) { 
+  @Output() onAddTask:EventEmitter<Task> = new EventEmitter();
+
+  constructor(private uiService: UiService, private router: Router) { 
       this.subScription = this.uiService
                               .onToggle()
                               .subscribe((value) => {
@@ -29,7 +33,15 @@ export class AddTaskComponent implements OnInit {
   }
 
   onSubmit(){
-    const newTask = {}
-    
+    const newTask = {
+      text: this.text,
+      day: this.day,
+      reminder: this.reminder
+    }
+    this.onAddTask.emit(newTask);
+    this.text = '';
+    this.day='';
+    this.reminder = false;
+    this.router.navigate(['/'])
   }
 }

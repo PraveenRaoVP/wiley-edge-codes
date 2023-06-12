@@ -1,11 +1,11 @@
-<form class="form-control add-form" (ngSubmit)="onSubmit()">
+<form *ngIf="showAddTask" class="form-control add-form" (ngSubmit)="onSubmit()" ngNativeValidate>
     <div class="form-group">
       <label for="text">Task Name</label>
-      <input type="text" class="form-control" id="text" aria-describedby="emailHelp" [(ngModel)]="text" placeholder="Enter email" name="text">
+      <input type="text" class="form-control" id="text" aria-describedby="emailHelp" [(ngModel)]="text" placeholder="Enter task name" name="text" required>
     </div>
-    <div class="form-group form-control-check">
-        <label for="day"></label>
-        <input type="text" class="form-control" id="day" aria-describedby="emailHelp" [(ngModel)]="day" placeholder="Enter day" name="day">
+    <div class="form-group ">
+        <label for="day">Day</label>
+        <input type="datetime-local" class="form-control" id="day" aria-describedby="emailHelp" [(ngModel)]="day" placeholder="Enter day" name="day" required>
      </div>
      <div class="form-group">
         <label for="reminder">Reminder</label>
