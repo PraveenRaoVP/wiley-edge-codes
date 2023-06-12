@@ -16,10 +16,10 @@ import { TaskItemComponent } from './components/task-item/task-item.component';
 import { AddTaskComponent } from './components/add-task/add-task.component';
 import { ButtonComponent } from './components/button/button.component';
 
-const appRoutes: Routes = [
-  {path:'', component: TasksComponent},
-  {path:'about', component: AboutComponent},
-]
+// const appRoutes: Routes = [
+//   {path:'', component: TasksComponent},
+//   {path:'about', component: AboutComponent},
+// ]
 
 // const appRoutes: Routes = [
 //   {path:'', component: WelcomeComponent},
@@ -47,7 +47,7 @@ const appRoutes: Routes = [
     HttpClientModule,
      AppRoutingModule,
      FontAwesomeModule,
-     RouterModule.forRoot(appRoutes)
+    // RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
