@@ -27,5 +27,7 @@ export class TaskItemComponent implements OnInit {
   taskToggle(task: Task){
     this.onToggleReminder.emit(task)
   }
-
+  redirectToPath(){
+    
+  }
 }

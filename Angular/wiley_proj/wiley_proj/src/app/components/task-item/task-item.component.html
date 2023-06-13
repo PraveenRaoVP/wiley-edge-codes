@@ -3,9 +3,10 @@
     [ngClass]="{reminder: task.reminder}"
     class="task"
     (dblclick)="taskToggle(task)"
+    (click)="redirectToPath()"
     >
     <h3> 
-        {{task.text}}
+        <a routerLink="/task/{{task.id}}">{{task.text | myuppercase }}</a>
         <fa-icon 
             [ngStyle]="{color: 'red'}"
             [icon] = 'faTimes'

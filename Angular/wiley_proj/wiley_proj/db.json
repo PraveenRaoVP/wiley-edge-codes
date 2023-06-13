@@ -18,7 +18,8 @@
       "id": 3,
       "text": "Angular App",
       "day": "June 13th at 1.30pm",
-      "remider": false
+      "remider": false,
+      "reminder": true
     },
     {
       "id": 4,
