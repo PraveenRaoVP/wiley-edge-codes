@@ -40,6 +40,10 @@ export class AddTaskComponent implements OnInit {
       this.textError = "Enter a task";
       return;
     }
+    if(!this.day){
+      this.textError = "Enter a day";
+      return;
+    }
     
     const newTask = {
       text: this.text,
